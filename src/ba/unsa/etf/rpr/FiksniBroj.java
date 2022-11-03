@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.Objects;
 
-public class FiksniBroj extends   TelefonskiImenik{
+public class FiksniBroj extends TelefonskiBroj {
 
     private String broj;
     private Grad grad;
