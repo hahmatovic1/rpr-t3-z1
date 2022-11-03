@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.Objects;
 
-public class FiksniBroj extends TelefonskiBroj {
+public class FiksniBroj extends TelefonskiBroj implements Comparable<FiksniBroj> {
 
     private String broj;
     private Grad grad;
@@ -44,5 +44,18 @@ public class FiksniBroj extends TelefonskiBroj {
     @Override
     public int hashCode() {
         return Objects.hash(broj, grad);
+    }
+
+    @Override
+    public int compareTo(FiksniBroj o) {
+        return this.Ispisi().compareTo(o.Ispisi());
+    }
+
+    @Override
+    public String toString() {
+        return "FiksniBroj{" +
+                "broj='" + broj + '\'' +
+                ", grad=" + grad +
+                '}';
     }
 }
