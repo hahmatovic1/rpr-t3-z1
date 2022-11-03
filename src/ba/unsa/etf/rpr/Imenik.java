@@ -35,6 +35,21 @@ public class Imenik {
         return sviBrojeviNaSlovo.toString();
     }
 
+    public Set<String> izGrada(Grad g){
+        Set<String> ljudiIzIstogGrada = new TreeSet<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.toLowerCase().compareTo(o2.toLowerCase());
+            }
+        });
+        for(Map.Entry<String, TelefonskiBroj> e: imenik.entrySet()){
+            if(e.getValue().Ispisi().equals(g.toString())){
+                ljudiIzIstogGrada.add(e.getKey().toString());
+            }
+        }
+        return ljudiIzIstogGrada;
+    }
+
 
 
 }
