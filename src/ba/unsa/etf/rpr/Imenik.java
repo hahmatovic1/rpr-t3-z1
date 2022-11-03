@@ -23,6 +23,18 @@ public class Imenik {
         return null;
     }
 
-    
+    public String naSlovo(char s){
+        StringBuilder sviBrojeviNaSlovo = new StringBuilder();
+        int redniBroj = 1;
+        for(Map.Entry<String, TelefonskiBroj> e: imenik.entrySet()){
+            if(e.getKey().charAt(0) == s){
+                sviBrojeviNaSlovo.append(redniBroj).append(".").append(e.getKey()).append(" - ").append(e.getValue().Ispisi());
+                redniBroj++;
+            }
+        }
+        return sviBrojeviNaSlovo.toString();
+    }
+
+
 
 }
